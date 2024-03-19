@@ -9,7 +9,7 @@ pub mod bpf;
 pub mod hidudev;
 pub mod modalias;
 
-static DEFAULT_BPF_DIR: &str = "/lib/firmware/hid/bpf";
+static DEFAULT_BPF_DIR: &str = "/usr/local/lib/firmware/hid/bpf";
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]

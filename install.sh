@@ -56,7 +56,7 @@ sed -e "s|/usr/local|$PREFIX|" 99-hid-bpf.rules > "$CARGO_TARGET_DIR"/bpf/99-hid
 if [[ -z "$DRY_RUN" ]];
 then
   install -D -t "$PREFIX"/bin/ "$TMP_INSTALL_DIR"/bin/udev-hid-bpf
-  install -D -t /lib/firmware/hid/bpf "$CARGO_TARGET_DIR"/bpf/*.bpf.o
+  install -D -t /usr/local/lib/firmware/hid/bpf "$CARGO_TARGET_DIR"/bpf/*.bpf.o
   install -D -m 644 -t /etc/udev/rules.d "$CARGO_TARGET_DIR"/bpf/99-hid-bpf.rules
   install -D -m 644 -t /etc/udev/hwdb.d "$CARGO_TARGET_DIR"/bpf/99-hid-bpf.hwdb
   udevadm control --reload
